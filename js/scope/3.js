@@ -1,6 +1,6 @@
 //var a //声明提升
-//console.log(a)
-//a=1
+console.log(a)
+a=1
 
 /*foo()
 
@@ -12,5 +12,5 @@ function foo(){
 a = 'hello'
 console.log(a);*/
 
-const a=1
-console.log(a)
+// const a=1
+// console.log(a)

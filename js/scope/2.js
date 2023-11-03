@@ -1,10 +1,11 @@
 var a=1
 function foo(){
+    console.log(a);
     var a =2
-    function bar(){
-        console.log(a);
-    }
+    // function bar(){
+        
+    // }
 }
 
-bar()
+// bar()
 foo()
