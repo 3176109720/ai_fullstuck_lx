@@ -8,3 +8,6 @@
     . i p y n b  n o t e b o o k
 - pipeline 核心模块，启动模块
     水管
+
+- pipeline(task, model)
+    遥遥领先， 指定一家中文模型
