@@ -1,15 +1,15 @@
-function fn(a) {
-    console.log(a);  // 
-    var a = 123
-    console.log(a);  // 
-    function a() {}
-    console.log(a);  // 
-    var b = function() {}  // 函数表达式
-    console.log(b);  // 
-    function d() {}
-    var d = a
-    console.log(d);  // 
-  }
+// function fn(a) {
+//     console.log(a);  // 
+//     var a = 123
+//     console.log(a);  // 
+//     function a() {}
+//     console.log(a);  // 
+//     var b = function() {}  // 函数表达式
+//     console.log(b);  // 
+//     function d() {}
+//     var d = a
+//     console.log(d);  // 
+//   }
 
 //   AO = {
 //     a: undefined -> 1 -> function a() {} -> 123,
@@ -17,4 +17,18 @@ function fn(a) {
 //     d: undefined -> function d() {} -> 123,
 //   }
 
-  fn(1)
+  // fn(1)
+  function test(a) 
+  {
+          console.log(a);
+          var a = 123;
+          console.log(a);
+          function a() {}
+          console.log(a);
+          var b = function () {}
+          console.log(b);
+          function d() {}
+  }
+      test(1);
+ 
+ 
