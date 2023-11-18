@@ -21,11 +21,9 @@ bfc的效果是让处于bfc内部的元素与外部的元素相互隔离，是�
   2. 定位: position: absolute | fixed
   3. 行内块: dispaly: inline-block
   4. 表格单元: display: table-cell | table-xxx
-  5. overflow: auto | hidden | scroll
-  6. 弹性盒子: display: flex | inline-flex
-
- - bfc容器的特征
+  5. fc容器的特征
 
   1. 内部盒子也会按照文档流的顺序排列
   2. bfc容器在计算高度时，会把浮动的子容器的高度计算在内
-  3. 可以解决外边距重叠问题
+  3. 可以解决外边距重叠问题 overflow: auto | hidden | scroll
+  6. 弹性盒子: display: flex | inline-flex
