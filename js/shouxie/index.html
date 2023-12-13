@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 手写ajax 跟代码业务相关 异步同步
+        // xhr 对象
+        // 数据请求流程 open send onreadystatechange  
+        // promise resolve reject 
+        const fethJSONData = function (url) {
+            // p 在开始的时候状态为pending 
+            return new Promise((resolve, reject) => {
+                // 执行器函数
+                // 耗时任务的容器
+                console.log('开始写ajax');
+                // 兼容性· IE6.0以前  现在没有必要  IE -> Edge
+                const xhr = 
+                    XMLHttpRequest
+                    ? new XMLHttpRequest()
+                    : new ActiveXObject('Microsoft.XMLHTTP')
+
+                xhr.open('GET', url, false) 
+                // 宏任务 事件
+                xhr.onreadystatechange= function() {
+                    if (xhr.readyState !==4) return
+                    // 叼一下 表现一下
+                    if (xhr.status === 200 || xhr.status === 304) {
+                        resolve(xhr.responseText)
+                    }else {
+                        reject(new Error(xhr.responseText))
+                    }
+                }
+                xhr.send()
+                // onreadyStateChange 
+                // setTimeout(() => {
+                //     resolve('gigi')
+                // }, 1000)
+                // resolve('gigi')  
+            })
+        };
+        // 刚开始的时候  状态为pending  -> fulfilled
+            (async function () {
+                const p = fethJSONData('https://api.github.com/users/shunwuyu/repos')
+                console.log('----');
+                console.log(p);
+                const res = await p;
+                // console.log(data);
+                console.log(p, res);
+            })()
+        // - 看返回的数据 json
+        // - 装插件
+        // await fethJSONData ('https://api.github.com/users/shunwuyu/repos')
+    </script>
+</body>
+</html>
