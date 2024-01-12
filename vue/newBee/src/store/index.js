@@ -17,7 +17,7 @@ const store = createStore({
     actions: {  // 异步操作  ===  async methods  调用 mutations
         async setCartCountAction(context) {
             const {data} = await getCart()
-            console.log(data);
+            // console.log(data);
             context.commit('setCartCount', data.length)  
         }
     },
