@@ -33,12 +33,15 @@ import NavBar from '../components/NavBar.vue';
 import SimpleHeader from '../components/SimpleHeader.vue';
 import { ref, onMounted, computed } from 'vue';
 import { getCart, modifyCart, deleteCartItem } from '@/api/cart.js';
-import { storeKey, useStore } from 'vuex';
+import { useStore } from 'vuex';
+import { showFailToast } from 'vant';
+import { useRouter } from 'vue-router';
 
-const result = ref([]);
-const list = ref([]);
+const result = ref([])
+const list = ref([])
 const checkAll = ref(false)
 const store = useStore()
+const router = useRouter()
 
 
 const init = async () => {
@@ -54,7 +57,7 @@ onMounted(async () => {
 
 const groupChange = () => {  // 选中商品
   // console.log(result.value);
-  checkAll.value = (result.value.length === list.value.length && result.value.length > 0) ? true : false  
+  checkAll.value = (result.value.length === list.value.length && result.value.length > 0) ? true : false
 }
 
 const numChange = async (value, detail) => {   // 修改数量
@@ -66,7 +69,12 @@ const numChange = async (value, detail) => {   // 修改数量
   await modifyCart(params)
 }
 const onSubmit = () => {  // 提交订单
-
+  // 没有选中商品 提示 请进行商品结算，选中了商品，则跳转 /create-order 
+  if (result.value.length) {
+    router.push({ path: '/create-order', query: { cartItemIds: JSON.stringify(result.value) } })
+  } else {
+    showFailToast('请进行商品结算');
+  }
 }
 const allCheck = () => {  // 全选
   if (checkAll.value) {
