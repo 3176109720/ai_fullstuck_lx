@@ -1,25 +1,24 @@
 <template>
-    <div class="home">
-        <h2>这是首页</h2>
-        <nav>
-            <router-link to="suggest">推荐</router-link>
-            <router-link to="/home/newest">最新</router-link>
-        </nav>
-        
+  <div class="home">
+    <h2>这是首页</h2>
+    <nav>
+      <router-link to="/home/suggest">推荐</router-link>
+      <router-link to="/home/newest">最新</router-link>
+    </nav>
+    
 
-        <router-view></router-view>
-    </div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+  export default {
+    
+  }
 </script>
 
 <style lang="css" scoped>
 nav a{
-    margin-left: 20px;
-
+  margin-left: 20px
 }
 </style>

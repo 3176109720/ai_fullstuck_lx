@@ -6,11 +6,11 @@
 
 
 let a = {
-    age: 18
+  age: 18
 }
 let b = a
 a.age = 19
 // a = {
-//     age: 19
+//   age: 20
 // }
 console.log(b.age);

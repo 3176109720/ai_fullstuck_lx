@@ -1,5 +1,5 @@
 function foo() {
-     c = 3
+  c = 3
 }
 foo()
 

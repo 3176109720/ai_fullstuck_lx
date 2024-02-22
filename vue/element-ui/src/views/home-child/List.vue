@@ -1,13 +1,13 @@
 <template>
-    <div>
-        学生列表
-    </div>
+  <div>
+    学生列表页面
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+  export default {
+    
+  }
 </script>
 
 <style lang="less" scoped>

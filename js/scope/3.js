@@ -1,16 +1,20 @@
-//var a //声明提升
-console.log(a)
-a=1
+// var a   // 声明提升
+// console.log(a);
+// a = 1
 
-/*foo()
+// function foo() {
+//   console.log(123);
+// }
+// foo()
 
-function foo(){
-    console.log(123);
-}*/
 
-/*let a = 1; 
+// let a = 1;
+// let a = 2
+
+
+const a = 1  // 常量
 a = 'hello'
-console.log(a);*/
 
-// const a=1
-// console.log(a)
+console.log(a);
+
+

@@ -1,15 +1,16 @@
 Car.prototype.run = function() {
-    console.log(running);
+  console.log('running');
 }
-Car.add =function() {
-    console.log('加油中');
+Car.add = function() {
+  console.log('加油中');
 }
 function Car() {
-    this.name = 'BMW'
+  this.name = 'BMW'
 }
 
-let Car = new Car ()
-// Car.run()
-// Car.add()
+let car = new Car();
+// car.run()
+// car.add()
+// Car.prototype.run()
 
-
+Car.add()

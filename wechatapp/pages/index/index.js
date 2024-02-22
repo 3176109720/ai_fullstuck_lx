@@ -14,10 +14,10 @@ Page({
     })
   },
   onLoad() {
-    //页面加载时， 去后台找数据
-    // 由小程序提供的接口请求API
+    // 页面加载时， 去后台去数据
+    // 小程序提供的接口请求API
     wx.request({
-      url:'https://resources.ninghao.net/wxapp-case/db.json',
+      url: 'https://resources.ninghao.net/wxapp-case/db.json',
       success: (res) => {
         // console.log(res.data.slides)
         this.setData({

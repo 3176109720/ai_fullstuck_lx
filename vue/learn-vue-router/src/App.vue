@@ -4,11 +4,11 @@
     <router-link to="/hot">沸点</router-link>
     <router-link to="/class">课程</router-link>
   </div>
-  
-  <!-- 路由路口: 所有配了路由的页面都会在该接口上展示 -->
+
+  <!-- 路由路口：所有配了路由的页面都会在该口子上展示 -->
   <div class="page">
     <router-view></router-view>
-  </div>   
+  </div>
 
 </template>
 
@@ -33,7 +33,7 @@ a{
 .page{
   width: 1000px;
   margin: 0 auto;
-  background-color: pink;
+  background: #e7e5e5;
   height: 1000px;
   font-size: 24px;
   padding: 30px;

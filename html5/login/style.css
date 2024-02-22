@@ -1,86 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.login {
-    padding: 0 45px;
-    height: 100vh;
-    background-color: rgba(212, 48, 48, 1);
-    position: relative;
-}
-
-.login__hd {
-    top: 22px;
-    color: rgba(255, 255, 255, 1);
-    font-size: 18px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.login__logo {
-    width: 139px;
-	height: 139px;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-}
-
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.login__wrap {
-    position: absolute;
-    bottom: 48px;
-}
-
-.login__wrap__account
-.login__wrap__password
-.login__wrap__submit {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-label {
-    width: 40px;
-	height: 30px;
-	left: 56px;
-	top: 421px;
-	color: rgba(255, 255, 255, 1);
-	font-size: 20px;
-	line-height: 150%;
-	text-align: left;
-}
-
-input[type="text"],
-input[type="password"] {  
-    width: 211px;
-	height: 42px;
-	left: 120px;
-	top: 415px;
-	text-indent: 5px;
-	color: rgba(255, 255, 255, 1);
-	border-radius: 2px;
-	font-size: 16px;
-	line-height: 150%;
-	border: rgba(153, 153, 153, 1) solid 1px;
-	text-align: left;
-}
-
-input[type="submit"] {
-	width: 271px;
-	height: 36px;
-	left: 60px;
-	top: 583px;
-	color: rgba(80, 80, 80, 1);
-	background-color: rgba(255, 255, 255, 1);
-	border-radius: 16px;
-	font-size: 16px;
-	line-height: 150%;
-	text-align: center;
+.login{
+  padding: 0 45px;
+  height: 100vh;
 }
