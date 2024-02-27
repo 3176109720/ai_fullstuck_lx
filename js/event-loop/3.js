@@ -1,25 +1,33 @@
-console.log('stard');   
+console.log('script start')
 async function async1() {
-  await async2()  // 浏览器给await开小灶提速
-  console.log('saync1 end');  // 被await挤入微任务队列
-} 
+  await async2() // 浏览器给await开小灶
+  console.log('async1 end') 
+}
 async function async2() {
-  console.log('saync2 end');
+  console.log('async2 end')
 }
 async1()
-setTimeout(function() {
-  console.log('setTimeout');
+setTimeout(function () {
+  console.log('setTimeout')
 }, 0)
-new Promise((resolve) => {
-  console.log('promise');
+new Promise(resolve => {
+  console.log('Promise')
   resolve()
 })
-.then(() => {
-  console.log('then1');
-})
-.then(() => {
-  console.log('then2');
-})
-console.log('end');
+  .then(function () {
+    console.log('promise1')
+  })
+  .then(function () {
+    console.log('promise2')
+  })
+console.log('script end')
 
-// stard   saync2end   promise   end    saync1end   then1  then2  setTimeout
+
+// script start
+// async2 end
+// Promise
+// script end
+// async1 end
+// promise1
+// promise2
+// setTimeout

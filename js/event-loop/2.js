@@ -1,14 +1,18 @@
-console.log(1);
+console.log('start');
 setTimeout(() => {
-  console.log(2);
-  new Promise((resolve) => {
-    console.log(4);
-    resolve()
-    setTimeout(() => {
-      console.log(6);
-    }) 
-  }).then(() => {
-    console.log(5);
+  console.log('setTimeout');
+  setTimeout(() => {
+    console.log('inner');
   })
+  console.log('end');
 }, 1000)
-console.log(3);
+new Promise((resolve, reject) => {
+  console.log('Promise');
+  resolve()
+})
+.then(() => {
+  console.log('then1');
+})
+.then(() => {
+  console.log('then2');
+})

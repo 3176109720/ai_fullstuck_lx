@@ -1,17 +1,25 @@
 <template>
   <div>
-    <Header />
-    <List />
+    <Head/>
+    <List/>
   </div>
 </template>
 
 <script>
-import Header from './components/body4/header.vue';
-import List from './components/body4/list.vue';
+import Head from './components/body4/Head.vue';
+import List from './components/body4/List.vue';
+
 export default {
   components: {
-    Header,
+    Head,
     List
+  },
+  data() {
+    return {
+      
+    }
+  },
+  methods: {
   }
 }
 </script>

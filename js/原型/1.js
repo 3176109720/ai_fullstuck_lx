@@ -1,25 +1,16 @@
+// Person.prototype   原型  也是对象
+
 Person.prototype.say = function() {
-  console.log('jxb 真好吃');
+  return 'hello';
 }
 
 function Person() {
-  this.name = '冷少'
+  this.name = '肖总'
   this.age = 18
 }
-// Person.eat = function() {
-//   console.log('eating jxb');
-// }
 
 let p = new Person()
 let p2 = new Person()
 
-// console.log(p);
-// Person.eat()
-// p.eat()
-p.say()
 
-
-
-
-
-
+console.log(p2.say == p.say);

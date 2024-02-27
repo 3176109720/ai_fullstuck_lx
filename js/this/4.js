@@ -1,11 +1,10 @@
-function foo(x, y) {
-  console.log(this.a, x + y);
+function foo(n, m) {
+  console.log(this.a, n, m);
 }
 var obj = {
-  a: 1
+  a: 2
 }
-
-// foo.call(obj, 4, 5)
-// foo.apply(obj, [4, 5])
-let bar = foo.bind(obj, 4)
-bar(5, 6)
+// foo.call(obj, 100, 200)
+// foo.apply(obj, [100, 200])
+var bar = foo.bind(obj, 100, 200)
+bar(300)

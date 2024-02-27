@@ -1,29 +1,20 @@
 // var a = 1
-
 // function foo() {
 //   console.log(this.a);
 // }
+// foo()
 
-// function bar() {  // bar 的词法作用域是window
-//   var a = 2
-//   foo()  // foo 是在bar的作用域中调用，但是此时必须要知道bar 的词法作用域是谁
-// }
+var b = 2
+function foo() {  // [[scope]]
+  var b = 1
 
-// bar()
-
-
-
-function foo() { // [[scope]]
- 
   function bar() {
-    console.log(this);
+    baz()
   }
-
-  function baz () {
-    bar()
+  function baz() {
+    console.log(this.b);
   }
-
-  baz()
+  bar()
 }
 
 foo()

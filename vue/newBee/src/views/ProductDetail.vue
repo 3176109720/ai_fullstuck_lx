@@ -5,15 +5,15 @@
     <div class="detail-content">
       <div class="detail-swipe-wrap">
         <van-swipe class="my-swipe" indicator-color="#1baeae">
-          <van-swipe-item>
-            <img src="https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/mate-50-pro-black.png" alt="">
+          <van-swipe-item v-for="(item, index) in state.detail.goodsCarouselList" :key="index">
+            <img :src="item" alt="">
           </van-swipe-item>
         </van-swipe>
       </div>
       <div class="product-info">
-        <div class="product-title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</div>
+        <div class="product-title">{{state.detail.goodsName}}</div>
         <div class="product-desc">免邮费 顺丰快递</div>
-        <div class="product-price">￥6999</div>
+        <div class="product-price">￥{{state.detail.sellingPrice}}</div>
       </div>
       <div class="product-intro">
         <ul>
@@ -23,29 +23,33 @@
           <li>常见问题</li>
         </ul>
       </div>
-      <div class="product-content"></div>
+      <div class="product-content" v-html="state.detail.goodsDetailContent"></div>
     </div>
+
+    <FooterBar />
   </div>
 </template>
 
 <script setup>
 import SimpleHeader from '../components/SimpleHeader.vue';
 import { useRoute, useRouter } from 'vue-router'
-import { onMounted } from 'vue';
+import { onMounted, reactive } from 'vue';
 import { getDetail } from '@/api/goods.js'
-
+import FooterBar from '../components/FooterBar.vue'
 
 const route = useRoute()  // 当前页面url的详细描述
 const router = useRouter()  // 路由的实例对象
-// console.log(route);
+const state = reactive({
+  detail: {}
+})
 
 
 onMounted(async() => {
   // 从url上取到id值，将商品的id传给后端，获取该商品的详细信息
   const { query: { id } } = route
-  const res = await getDetail(id)
-  console.log(res);
-
+  const { data } = await getDetail(id)
+  console.log(data);
+  state.detail = data
 })
 </script>
 

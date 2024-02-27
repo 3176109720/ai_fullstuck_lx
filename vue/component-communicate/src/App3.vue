@@ -1,32 +1,30 @@
 <template>
-  <!-- head -->
-  <Header @add="handle" />  <!-- 订阅add事件 -->
-
-  <div class="body">
-    <ul>
-      <li v-for="(item, index) in lists">{{item}}</li>
-    </ul>
+  <div>
+    <Head @add="handle" />
+    <List :msg="msg" />
   </div>
 </template>
 
 <script>
-  import Header from './components/body3/header.vue';
-  export default {
-    components: {
-      Header
-    },
-    data() {
-      return {
-        lists: ['html', 'css']
-      }
-    },
-    methods: {
-      handle(val) {
-        console.log(val);
-        this.lists.push(val);
-      }
+import Head from './components/body3/Head.vue';
+import List from './components/body3/List.vue';
+
+export default {
+  components: {
+    Head,
+    List
+  },
+  data() {
+    return {
+      msg: ''
+    }
+  },
+  methods: {
+    handle(val) {
+      this.msg = val
     }
   }
+}
 </script>
 
 <style lang="css" scoped>

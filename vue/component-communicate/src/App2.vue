@@ -1,31 +1,30 @@
 <template>
-  <div class="head">
-    <input type="text" v-model="message">
-    <button @click="submit">确定</button>
-  </div>
-  <!-- list -->
-  <List :lists="lists" />
+  <div>
+    <Head @add="handle" />
 
+    <div class="body">
+      <ul>
+        <li v-for="(item, index) in lists" :key="index">{{item}}</li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
-  import List from './components/body2/list.vue'
+  import Head from '@/components/body2/Head.vue'
   export default {
     components: {
-      List
+      Head
     },
     data() {
       return {
-        lists: ['html', 'css'],
-        message: ''
+        lists: ['html', 'css']
       }
     },
     methods: {
-      submit() {
-        if (this.message) {
-          this.lists.push(this.message)
-          this.message = ''
-        }
+      handle(val) {
+        console.log(val);
+        this.lists.push(val)
       }
     }
   }

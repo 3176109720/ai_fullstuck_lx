@@ -1,28 +1,27 @@
 // 对象的创建
+//1.  var obj = {}  // 对象字面量|对象直接量
 
-// var obj = {}  // 对象字面量
+//2.  let obj = new Object() // 构造函数
 
-// var obj2 = new Object();  // 构造函数
+//3.   自定义构造函数
 
-// 自定义构造函数
+// 4. Object.create({})
+
+// 构造函数就像工厂， 可以批量化生成对象
 
 function Car(color) {
   this.name = 'BMW'
-  this.height = 1400
-  this.lang = 4900
+  this.height = '1400'
+  this.lang = '4900'
   this.weight = 1000
   this.color = color
-
-  // var this = {
-  //   name: 'BMW',
-  //   xxx:xxx
-  // }
-  // return this
 }
 
-let car = new Car('green')  // 实例对象 == this
-// let car2 = new Car('pink')
-// car.name = '劳斯莱斯'
+let car1 = new Car('pink')  // 实例对象
+let car2 = new Car('green')
+// car1.name = '玛莎'
 
-console.log(car);
+console.log(car1);
+console.log(car2);
+
 

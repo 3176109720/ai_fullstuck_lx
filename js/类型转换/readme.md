@@ -1,45 +1,45 @@
-# 基本数据类型之间的转换
-1. 转布尔
+# 基本数据类型的转换
+1. 转布尔值
 2. 转数字
 3. 转字符串
 4. 转对象
 
 
-# 对象转原始类型    obj.toString()     obj.valueOf()
+# 对象转原始值
+- 转字符串 调用的其实就是 Object.prototype.toString()
+1. {}.toString()  返回由 "[object" 和 class 和 "]" 组成的字符串
+2. [].toString()  返回由数组内部元素以逗号拼接的字符串
+3. xx.toString()  直接返回字符串字面量
 
-toString() 在js中有多个版本:
- - {}.toString()  //  "[object class]" 
- - 数组的toString()会将数组中的所有元素转化成字符串并以逗号拼接
- - 函数的toString()会将整个函数体以字符串形式返回
- - Date的toString()会将整个date以字符串形式返回
-
-
-
-## 对象转字符串   ToPrimitive(obj, String)
-1. 判断obj是基本类型，则返回
-2. 否则 调用 toString 方法，如果得到原始类型，则返回
-3. 否则 调用 valueOf 方法，如果得到原始类型，则返回
-4. 否则 报类型错误
-
-## 对象转数字  ToPrimitive(obj, Number)
-1. 判断obj是基本类型，则返回
-2. 否则 调用 valueOf 方法，如果得到原始类型，则返回
-3. 否则 调用 toString 方法，如果得到原始类型，则返回
-4. 否则 报类型错误
+- valueOf 
+1. 用于转换包装类
 
 
-# 一元运算符  +
 
-# 二元运算符  + 
-lprim = ToPrimitive(v1)
-rprim = ToPrimitive(v2)
+# ToPrimitive
+ToPrimitive(obj, Number)  ==>  Number({})
+1. 如果obj是基本类型，直接返回
+2. 否则，调用 valueOf 方法，如果得到原始值，则返回
+3. 否则，调用 toString 方法，如果得到原始值，则返回
+4. 否则，报错
 
-v1 + v2  === lprim + rprim
+ToPrimitive(obj, String)  ==>  String({})
+1. 如果obj是基本类型，直接返回
+2. 否则，调用 toString 方法，如果得到原始值，则返回
+3. 否则，调用 valueOf 方法，如果得到原始值，则返回
+4. 否则，报错
 
-1. 如果 lprim 是字符串 或者 rprim 是字符串，则返回将不是字符串的一方转为字符串，再进行拼接
-2. 否则 都转成number 进行加法运算
 
-# == 相等
+# 对象转布尔就是true
 
-x == y
+
+
+
+# 一元运算符 +
+
+
+# 二元运算符 +
+lprim + rprim  == ToPrimitive(v1) + ToPrimitive(v2)
+1. 当 + 两边有一个是字符串，则按字符串进行拼接
+2. 否则，转到 number 进行计算
 

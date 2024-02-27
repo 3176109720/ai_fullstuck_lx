@@ -1,29 +1,18 @@
-// 1 + '1'
-
-// +[]  +''
-
-
-
-[] + {} 
-// '' + '[object Object]'
-// '[object Object]'
-
-console.log({} + []); 
-// {}
+// 一元运算符
+// +'1'  // Number(1)
 // +[]
+// +{}
+// +[1, 2, 3]  === +'1,2,3'
 
-{} + {}  ===   '[object Object]' + '[object Object]'
 
+// 二元运算符
+// console.log(1 + '1');
+// console.log(1 + null);
+// console.log([] + []);
+// console.log([] + {});
+// console.log({} + {}); // "[object Object][object Object]"
 
-// [] == ![]
-
-// [] == !true
-
-// [] == false
-
-// [] == 0
-
-// '' == 0
-
-// 0 == 0
+// if (1 == '1') {
+//   console.log('ok');
+// }
 

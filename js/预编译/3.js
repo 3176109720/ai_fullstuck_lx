@@ -1,20 +1,18 @@
-function fn(a) {
-  console.log(a); // function a() {}
-  var a = 123
-  console.log(a); // 123
-  function a() {}
-  console.log(a);  // 123
-  var b = function() {}  // 函数表达式
-  console.log(b);  // function() {}
+function foo(a, b) {
+  console.log(a); // 1
+  c = 0
+  var c;
+  a = 3
+  b = 2
+  console.log(b);  // 2
+  function b() {}
   function d() {}
-  var d = a
-  console.log(d);  // 123
+  console.log(b);  // 2
 }
-
-// AO = {
-//   a: undefined  1  function a() {}   123,
-//   b: undefined   function() {},
-//   d: undefined  function d() {}  123,
+// AO: {
+//   a: undefined 1  3,
+//   b: undefined  function b() {}  2,
+//   c: undefined  0,
+//   d: function d() {}
 // }
-
-fn(1)
+foo(1)

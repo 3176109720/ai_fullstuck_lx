@@ -107,11 +107,10 @@ onMounted(async () => {
   }
 
   const { data } = await getHome()
-  // console.log(data);
-  state.swiperList = data.data.carousels
-  state.newGoodsList = data.data.newGoodses
-  state.hotGoodsList = data.data.hotGoodses
-  state.recommendGoodsList = data.data.recommendGoodses
+  state.swiperList = data.carousels
+  state.newGoodsList = data.newGoodses
+  state.hotGoodsList = data.hotGoodses
+  state.recommendGoodsList = data.recommendGoodses
 })
 
 const goDetail = (name) => {

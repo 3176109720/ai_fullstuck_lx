@@ -1,13 +1,11 @@
 var a = 1
+var b = 'hello world'
 
 function foo() {
-  var a = 2
+  var c = true
+  // console.log(a);
 }
 
 foo()
 
-console.log(a);
-
-
-
-
+console.log(c);

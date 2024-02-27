@@ -1,16 +1,19 @@
-// GO = {
+// GO: {
 //   global: undefined  100,
-//   fn: function fn() {xxx}
+//   fn: function fn() {}
 // }
 
-var global = 100
+global = 100
 function fn() {
-  console.log(global);
+  console.log(global); // undefined
+  global = 200
+  console.log(global);  // 200
+  var global = 300
 }
 
-// AO = {
-
+// AO: {
+//   global: undefined  200  300
 // }
 
 fn()
-
+var global;

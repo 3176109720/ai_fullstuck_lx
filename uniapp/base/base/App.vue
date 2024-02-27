@@ -17,5 +17,6 @@
 
 <style>
 	/*每个页面公共css */
-	
+	/* @import 'common/font/iconfont.css'; */
+	/* @import url(https://at.alicdn.com/t/c/font_4416312_4qzw5cy6h0q.css); */
 </style>

@@ -1,7 +1,7 @@
 function foo() {
-  var myName = '阿美'
+  var myName = '旭旭'
   let test1 = 1
-  const test2 = 2
+  let test2 = 2
   var innerBar = {
     getName: function() {
       console.log(test1);
@@ -11,8 +11,8 @@ function foo() {
       myName = newName
     }
   }
-  return innerBar;
+  return innerBar
 }
 var bar = foo()
-bar.setName('洋洋')
+bar.setName('浪哥')
 console.log(bar.getName());

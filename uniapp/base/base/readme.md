@@ -12,11 +12,15 @@ uniapp 提供了 页面生命周期，比如上拉加载，下辣刷新，页面
 
 # 全局变量
 1. Vue.prototype.name = '测试名称'   (options API)
-2. 在App.vue中设置
+
+2. 在App.vue中设置 
 ```javascript
 globalData: {
 	name: '全局的名称'
 },
 ```
-getApp().globalData.name 
-3. vuex
+getApp().globalData.name
+
+3. Vuex
+
+
