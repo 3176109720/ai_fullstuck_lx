@@ -8,4 +8,8 @@
 // Number(a)
 // String(a)
 // Boolean(a)
-parseInt()
+// parseInt()
+
+
+// [] == ![]
+
