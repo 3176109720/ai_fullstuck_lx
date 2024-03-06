@@ -125,13 +125,55 @@ Number() ...
 
     箭头函数:箭头函数中的this是它外层非箭头函数的。指向也按照上面的绑定规则
 
-    # 12. new的实现原理
-    1. 创建一个新的空对象。
-    2. 将这个空对象的原型指向构造函数的原型对象（也就是 constructor.prototype）。
-    3. 使用 call 方法调用构造函数，并将新创建的对象绑定到 this 上，以便在构造函数中可以使用 this 来引用新对象。
-    4. 如果构造函数没有显式返回一个对象，则返回这个新对象。
+# 12. new的实现原理
+  1. 创建一个新的空对象。
+  2. 将这个空对象的原型指向构造函数的原型对象（也就是 constructor.prototype）。
+  3. 使用 call 方法调用构造函数，并将新创建的对象绑定到 this 上，以便在构造函数中可以使用 this 来引用新对象。
+  4. 如果构造函数没有显式返回一个对象，则返回这个新对象。
     
-    - 构造函数有返回值，且为引用类型时会覆盖new当中的返回值
+  - 构造函数有返回值，且为引用类型时会覆盖new当中的返回值
 
-    # 13. call、apply、bind的实现原理
+# 13. call、apply、bind的实现原理
+     
+
+
+
+
+# 14. 说说js中的事件模型
+
+  1. DOM0级  onclick (无法控制事件在捕获，冒泡那个阶段执行)
+  2. DOM1级  addeventListen  (可以控制事件在捕获，冒泡那个阶段执行)
+  3. IE模型  attachEvent  (无法控制事件在捕获，冒泡那个阶段执行)
+
+# 15. 说说typeof和instanceof的区别
+  - typeof
+    能判断除了null以外的所有原始类型
+
+  - instanceof 
+    能判断一个变量是属于那种类型，
+    instanceof为什么不能判断原始类型
+    因为原始类型没有原型链，所以无法判断一个对象是否为另一个对象的实例
+
+  - Object.prototype.toString(X)
+
+    1. [].toString()  数组版本的toString
+    2. Object.prototype.toString.call()  对象版本的toString
+    3. {}.toString()  对象版本的toString
+
+    该方法会让 变量 X 调用对象上的 toString 函数，而toString返回值为 '[object 类型]' 
+
+  - Array.isArray()
+    只能判断一个变量是否是数组
+
+# 16. 说说Ajax的原理
+  - Ajax是什么
+    Async JavaScript and XML , 是一种异步js和网页交互的技术，可以实行不刷新网页就跟服务器交换数据，更新界面
+
+  - 实现过程
+    1. 创建一个XHR实例对象
+    2. 调用实例对象中的open方法与服务器建立连接 
+    3. 调用实例对象中的send方法发送请求
+    4. 监听onreadystatechange事件，通过判断readyState的值来获取最终数据
+    5. 将数据更新到html面
+
     
