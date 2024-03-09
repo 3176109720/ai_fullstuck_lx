@@ -176,4 +176,13 @@ Number() ...
     4. 监听onreadystatechange事件，通过判断readyState的值来获取最终数据
     5. 将数据更新到html面
 
-    
+# 17. 怎么实现上拉加载下拉刷新
+  1. 监听 touchstar  touchmove  touchend  事件，记录手指移动的距离，大于临界值时实现刷新操作，其中使用 transform: translateY 来添加各处的动画
+
+  2. 根据手指滑动的方向和容器顶端或底部到屏幕的距离来确定
+
+
+# 18. 防抖节流
+
+# 19. 
+  
