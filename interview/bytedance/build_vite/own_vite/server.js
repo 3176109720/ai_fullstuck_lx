@@ -22,4 +22,4 @@ app.use(async ctx => {
 // 后端起动web服务 监听5174 
 app.listen(5174, () => {
     console.log('项目在5174端口启动起来了!')
-})
+}) 
