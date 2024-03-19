@@ -29,16 +29,20 @@
             </div>
 </van-form>
 
+        
         </div>
+        <p class="register" @click="goRegister">新用户点击注册</p>
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import axios from '@/api'
 
 const username = ref('')
 const password = ref('')
+const router = useRouter('')
 
 const onSubmit = async(values) => {
   // console.log(values);
@@ -47,12 +51,18 @@ const onSubmit = async(values) => {
     password: values.password,
   })
   console.log(res);
+  localStorage.setItem('userInfor', JSON.stringify(res.data))
+  router.push('/noteClass')
 };
+
+const goRegister = () => {
+  router.push('/Register')
+}
 
 </script>
 
 <style lang="less" scoped>
-.login{
+.login{ 
   width: 100vw;
   height: 100vh;
   background-color: #fff;
