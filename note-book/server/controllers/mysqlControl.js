@@ -48,14 +48,28 @@ const userFind = (username) => {
     let _sql = `select *from  users where username='${username}'`;
     return allService.query(_sql)
 }
-
+// 注册
 const userAdd = (username, password, nickname) => {
     let _sql = `insert into users(username,password,nickname) values('${username}','${password}','${nickname}')`;
+    return allService.query(_sql)
+}
+
+// 根据type查找文章的列表
+const findNoteListByType = (type) => {
+    let _sql = `select *from  note where note_type='${type}'`;
+    return allService.query(_sql)
+}
+
+// 根据id查找文章详情
+const findNoteDetailById = (id) => {
+    let _sql = `select * from  note where id='${id}'`;
     return allService.query(_sql)
 }
 
 module.exports = {
     userLogin,
     userFind,
-    userAdd
+    userAdd,
+    findNoteListByType,
+    findNoteDetailById
 }

@@ -4,9 +4,13 @@ const cors = require('koa2-cors')  // 处理跨域
 const app = new Koa()
 
 const user = require('./routers/user.js')
+const note = require('./routers/note.js')
+
 app.use(cors())
 app.use(bodyParser())
+
 app.use(user.routes(), user.allowedMethods())
+app.use(note.routes(), note.allowedMethods())
 
 app.listen(3000, () => {
     console.log('listening on port 3000')

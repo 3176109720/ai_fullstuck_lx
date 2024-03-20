@@ -51,8 +51,8 @@ const onSubmit = async(values) => {
     password: values.password,
   })
   console.log(res);
-  localStorage.setItem('userInfor', JSON.stringify(res.data))
-  router.push('/noteClass')
+  localStorage.setItem('userInfo', JSON.stringify(res.data))
+  router.push('/NoteClass')
 };
 
 const goRegister = () => {
