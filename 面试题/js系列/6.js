@@ -17,19 +17,19 @@
 
 
 function fn() {
-    let count = 0
-  
-    const foo = function () {
-      count++
-    }
-    
-    const bar = function() {
-      count--
-    }
-    return {foo, bar}
+  let count = 0
+
+  const foo = function () {
+    count++
   }
   
-  let {foo, bar} = fn()
-  
-  foo()
-  bar()
+  const bar = function() {
+    count--
+  }
+  return {foo, bar}
+}
+
+let {foo, bar} = fn()
+
+foo()
+bar()

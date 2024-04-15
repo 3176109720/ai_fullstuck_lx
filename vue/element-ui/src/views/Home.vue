@@ -1,62 +1,58 @@
 <template>
-  <div class="common-layout">
-    <el-container>
-      <el-header>
-        <span>选课系统</span>
-
-        <el-dropdown>
-          <span class="el-dropdown-link">
-            欢迎 {{$route.hash.slice(1)}}
-          </span>
-          <template #dropdown>
-            <el-dropdown-menu>
-              <el-dropdown-item>修改密码</el-dropdown-item>
-              <el-dropdown-item>个人详情</el-dropdown-item>
-              <el-dropdown-item>退出登录</el-dropdown-item>
-            </el-dropdown-menu>
-          </template>
-        </el-dropdown>
-        
-      </el-header>
+  <div class="home">
+    <div class="common-layout">
       <el-container>
-        <el-aside width="200px">Aside</el-aside>
-        <el-main>Main</el-main>
+        <el-header>
+          <h2>后台管理系统</h2>
+          <div class="user-info">欢迎 {{ $route.query.user }}</div>
+        </el-header>
+        <el-container>
+          <el-aside width="200px">
+            <el-menu active-text-color="#ffd04b" background-color="#545c64" class="el-menu-vertical-demo"
+              default-active="/home/list" text-color="#fff" router="true">
+              <el-menu-item index="/home/list">
+                <span>学生列表</span>
+              </el-menu-item>
+              <el-menu-item index="/home/document">
+                <span>就业统计</span>
+              </el-menu-item>
+              <el-menu-item index="3">
+                <span>联系方式</span>
+              </el-menu-item>
+            </el-menu>
+          </el-aside>
+
+          <el-main>
+            <router-view></router-view>
+          </el-main>
+
+        </el-container>
       </el-container>
-    </el-container>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  created() {
-    console.log(this.$route);
-  }
+
 }
 </script>
 
 <style lang="less" scoped>
-.common-layout {
+.el-container {
+  width: 100vw;
   height: 100vh;
 
-  .el-container {
-    height: 100%;
+  .el-header {
+    background-color: rgb(178, 217, 244);
+    height: 80px;
+    line-height: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .el-header {
-      background-color: rgb(190, 244, 244);
-      height: 80px;
-      line-height: 80px;
-      font-size: 30px;
-      display: flex;
-      justify-content: space-between;
-
-      .el-dropdown-link {
-        cursor: pointer;
-        color: var(--el-color-primary);
-        display: flex;
-        align-items: center;
-        font-size: 24px;
-      }
-    }
+  .el-aside {
+    background: #545c64;
   }
 }
 </style>

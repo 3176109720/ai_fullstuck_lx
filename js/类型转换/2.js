@@ -1,6 +1,5 @@
-// console.log(Number([]));
+// Object.prototype.toString.call({a: 1})
 
-// 转字符串  toString
+Number({})  // Number('[object Object]')  // NaN
 
-
-// 转数字  valueOf
+String([]) // String('')  // ''

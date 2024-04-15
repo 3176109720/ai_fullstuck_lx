@@ -1,12 +1,12 @@
 function Car(color, speed) {
-this.color = color
-this.speed = speed
-this.seat = [1, 2]
+  this.color = color
+  this.speed = speed
+  this.seat = [1, 2]
 }
 
 Truck.prototype = new Car('red', 200)
 function Truck() {
-this.container = true
+  this.container = true
 }
 
 

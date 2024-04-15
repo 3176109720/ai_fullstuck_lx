@@ -9,70 +9,57 @@
       <van-form @submit="onSubmit">
         <van-cell-group inset>
           <van-field
-            v-model="state.nickname"
-            name="昵称"
+            v-model="nickname"
+            name="nickname"
             label="昵称"
             placeholder="昵称"
-            :rules="[{ required: true, message: '请填写昵称' }]"
           />
           <van-field
-            v-model="state.username"
-            name="用户名"
+            v-model="username"
+            name="username"
             label="用户名"
             placeholder="用户名"
-            :rules="[{ required: true, message: '请填写用户名' }]"
           />
           <van-field
-            v-model="state.password"
+            v-model="password"
             type="password"
-            name="密码"
+            name="password"
             label="密码"
             placeholder="密码"
-            :rules="[{ required: true, message: '请填写密码' }]"
           />
         </van-cell-group>
         <div style="margin: 16px;">
-          <van-button round block color="#7232dd" native-type="submit">
+          <van-button round block type="primary" native-type="submit">
             注册
           </van-button>
         </div>
       </van-form>
 
     </div>
-    <p class="register" @click="login">已有账号？点击登录</p>
+    <p class="register" @click="goLogin">已有账号？点击登录</p>
   </div>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import axios from '../api'
-import { showSuccessToast } from 'vant';
+import axios from '@/api'
 
+const nickname = ref('')
+const username = ref('')
+const password = ref('')
 const router = useRouter()
-const state = reactive({  // 将对象变成响应式
-  username: '',
-  password: '',
-  nickname: ''
-})
 
-const onSubmit = async() => {
-  // 发请求,将state.username, state.password, nickname传给后端
-  // console.log(state.nickname, state.username, state.password);
-  const data = await axios.post('/register', {
-    username: state.username,
-    password: state.password,
-    nickname: state.nickname
-  })
-  // console.log(data);
-  showSuccessToast(data.msg)
+const goLogin = () => {
+  router.push('/login')
+}
+
+const onSubmit = async(values) => {
+  const res = await axios.post('/user/register', values)
+  showSuccessToast(res.msg);
   setTimeout(() => {
     router.push('/login')
   }, 1500)
-}
-
-const login = () => {
-  router.push('/login')
 }
 
 </script>

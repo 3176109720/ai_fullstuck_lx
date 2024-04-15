@@ -11,3 +11,4 @@ function Child() {
 let c = new Child()
 
 console.log(c.say);
+

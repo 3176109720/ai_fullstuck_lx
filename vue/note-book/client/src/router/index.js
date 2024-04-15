@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('../views/Login.vue'),
+    component: () => import('@/views/Login.vue'),
     meta: {
       title: '登录'
     }
@@ -16,7 +16,7 @@ const routes = [
   {
     path: '/register',
     name: 'register',
-    component: () => import('../views/Register.vue'),
+    component: () => import('@/views/Register.vue'),
     meta: {
       title: '注册'
     }
@@ -24,7 +24,7 @@ const routes = [
   {
     path: '/noteClass',
     name: 'noteClass',
-    component: () => import('../views/NoteClass.vue'),
+    component: () => import('@/views/NoteClass.vue'),
     meta: {
       title: '笔记分类'
     }
@@ -32,7 +32,7 @@ const routes = [
   {
     path: '/noteList',
     name: 'noteList',
-    component: () => import('../views/NoteList.vue'),
+    component: () => import('@/views/NoteList.vue'),
     meta: {
       title: '笔记列表'
     }
@@ -40,7 +40,7 @@ const routes = [
   {
     path: '/noteDetail',
     name: 'noteDetail',
-    component: () => import('../views/NoteDetail.vue'),
+    component: () => import('@/views/NoteDetail.vue'),
     meta: {
       title: '笔记详情'
     }
@@ -48,7 +48,7 @@ const routes = [
   {
     path: '/notePublish',
     name: 'notePublish',
-    component: () => import('../views/NotePublish.vue'),
+    component: () => import('@/views/NotePublish.vue'),
     meta: {
       title: '笔记发布'
     }
@@ -60,20 +60,20 @@ const router = createRouter({
   routes
 })
 
-// 路由守卫
+// 全局路由守卫
 const whitePath = ['/login', '/register']
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, from) => {
+  // console.log(to, from);
   document.title = to.meta.title
 
-  if (!whitePath.includes(to.path)) { // 你想去详情页
-    if (!sessionStorage.getItem('userInfo')) { // 没登录
+  if (!whitePath.includes(to.path)) {
+    // 看本地存储有没有值
+    if (!localStorage.getItem('userInfo')) {
       router.push('/login')
       return
     }
-    next()
-    return
   }
-  next()
+  // next()
 })
 
 export default router

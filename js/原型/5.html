@@ -1,11 +1,19 @@
 <script>
-  Person.prototype.name = '阿美'
+  Person.prototype.say = function() {
+    console.log('hello');
+  }
   function Person() {
+    this.name = '袁总'
+    this.age = 18
+
     // var this = {
+    //   name: '袁总',
+    //   age: 18,
     //   __proto__: Person.prototype
     // }
+    // return this
   }
-  var p = new Person();
-  console.log(p); // __proto__
 
+  let p = new Person()
+  p.say()
 </script>

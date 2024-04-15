@@ -3,10 +3,14 @@
 // a = 2
 // console.log(b);
 
-let obj = {
+
+
+let a = {
   age: 18
 }
-let obj2 = obj
-obj.age = 20
-
-console.log(obj2.age);
+let b = a
+a.age = 19
+// a = {
+//   age: 20
+// }
+console.log(b.age);

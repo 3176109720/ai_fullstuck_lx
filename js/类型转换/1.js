@@ -1,38 +1,41 @@
-// let num = 123
-// let str = 'hello world'
-// let flag = true
-// let un = undefined
-// let n = null
+// if (1) {
+//   console.log('hello');
+// }
 
-// let big = 123n
-// let sy = Symbol(123)
+// let arr = [1, 2 ,3, 4]
 
-// console.log(Boolean(false));
-// console.log(Boolean(+0));
-// console.log(Boolean(-0));
-// console.log(Boolean(-1));
-// console.log(Boolean(undefined));
-// console.log(Boolean(null));
-// console.log(Boolean(''));
+// while (arr.length) {
+//   console.log(arr.pop());
+// }
+
+
+// console.log(Boolean());  // false
+// console.log(Boolean('123'));
+// console.log(Boolean('')); // false
+// console.log(Boolean(0)); // false
+// console.log(Boolean(false));  // false
+// console.log(Boolean(undefined)); // false
+// console.log(Boolean(null)); // false
+// console.log(Boolean(NaN));  // false
+
 
 
 // console.log(Number());
-// console.log(Number('123'));
+// console.log(Number(false));
+// console.log(Number('123a'));
 // console.log(Number('hello'));
 // console.log(Number(undefined));
 // console.log(Number(null));
-// console.log(Number(false));
-// console.log(Number('00100.123'));
 
 
-// console.log(String());
-// console.log(String(0));
-// console.log(String(NaN));
-// console.log(String(Infinity));
+
+// console.log(String());  // ''
 // console.log(String(undefined));
 // console.log(String(null));
 // console.log(String(true));
+// console.log(String(false));
+// console.log(String(123));
+// console.log(String(NaN));
 
 
-
-// console.log(Object('123'));
+// console.log(Object('hello'));

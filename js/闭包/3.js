@@ -1,10 +1,10 @@
 function a() {
-  
+
   function b() {
-    var bbb = 234
-    console.log(aaa); // 123
+    var num = 1
+    console.log(count);
   }
-  var aaa = 123
+  var count = 2
   return b
 }
 

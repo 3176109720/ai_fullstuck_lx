@@ -1,14 +1,14 @@
-import { createStore } from "vuex"
+import { createStore } from 'vuex'
 
 const store = createStore({
-  state() {  // data
+  state() {  // data 数据源  公共的
     return {
       lists: ['html', 'css', 'js']
     }
   },
-  mutations: { // methods
-    listsAdd(state, val) {
-      state.lists.push(val)
+  mutations: {  // methods
+    addLists(state, msg) { // mutations中定义的方法，天生具有一个形参，代表state数据源
+      state.lists.push(msg)  // addLists(1)
     }
   }
 })

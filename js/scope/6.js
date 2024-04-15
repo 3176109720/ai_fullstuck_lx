@@ -1,8 +1,6 @@
-function foo(str, a) {
-  eval(str) //var b = 3
-  
-  console.log(a, b);
+function foo() {
+  c = 3
 }
+foo()
 
-foo('var b = 3', 1)
-
+console.log(c);

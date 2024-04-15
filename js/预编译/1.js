@@ -1,8 +1,17 @@
-var a = 1
-function foo(a) {
-  var a = 2
-  function a() {}
-  var b = a
-  console.log(a);
+// function foo() {
+//   var a = 1
+// }
+// foo()
+// console.log(a);
+
+
+// console.log(a);
+// let a = 1
+
+
+
+foo()
+function foo() {
+  console.log('hello');
 }
-foo(3)
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p class="title">标题</p>
+    <p>{{foo}}</p>
+  </div>
+
+  <script>
+    // const app = new Vue({
+    //   el: '#app',
+    //   data: () => {
+    //     return {
+    //       foo: 'foo'
+    //     }
+    //   }
+    // })
+
+    // {
+    //   vnode: {
+    //     tag: 'p',
+    //     attr: 'class',
+    //     class: 'title',
+    //     content: '标题'
+    //   },
+    //   vnode: {
+    //     tag: 'p',
+    //     attr: '',
+    //     class: '',
+    //     content: 'foo'
+    //   },
+    // }
+  </script>
+
+
+  <script>
+    let obj = {
+      a: 1,
+      b: {
+        n: 2
+      }
+    }
+    
+    let obj2 = {
+      c: 1,
+      b: {
+        n: {
+          a: 1,
+          b: {
+            n: 2
+          }
+        }
+      }
+    }
+
+
+  </script>
+</body>
+</html>

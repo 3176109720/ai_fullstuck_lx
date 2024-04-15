@@ -1,8 +1,10 @@
 <template>
   <div>
-    <Transition name="move">
-      <router-view></router-view>
-    </Transition>
+    <router-view v-slot="{ Component }">
+      <transition name="move">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -10,7 +12,7 @@
 
 </script>
 
-<style lang="less" scoped>
+<style lang="css" scoped>
 .move-enter-active, .move-leave-active{
   transition: all 0.3s ease-out;
 }
@@ -20,4 +22,8 @@
   opacity: 0;
 }
 
+.move-enter-to, .move-leave-from{
+  transform: translateX(0px);
+  opacity: 1;
+}
 </style>

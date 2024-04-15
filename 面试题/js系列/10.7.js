@@ -1,19 +1,19 @@
 class Parent {
-    constructor(name) {
-      this.name = name;
-    }
-    getName() {
-      return this.name;
-    }
+  constructor(name) {
+    this.name = name;
   }
-  
-  class Child extends Parent {
-    constructor(type, name) {
-      super(name)
-      this.type = type;
-    }
+  getName() {
+    return this.name;
   }
-  
-  let c = new Child('child', 'Tom')
-  
-  console.log(c.name);
+}
+
+class Child extends Parent {
+  constructor(type, name) {
+    super(name)
+    this.type = type;
+  }
+}
+
+let c = new Child('child', 'Tom')
+
+console.log(c.name);

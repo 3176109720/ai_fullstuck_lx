@@ -1,12 +1,10 @@
 <template>
   <div class="note-class-wrapper">
-    <div class="note-class" :class="{'hide': state.isMenuShow}">
+    <div class="note-class">
       <header>
-        <div @click="() => state.isMenuShow = true">
-          <van-icon name="wap-nav" />
-        </div>
+        <div><van-icon name="wap-nav" /></div>
         <div>
-          <van-icon name="edit" @click="goPublish"/>
+          <van-icon name="edit" @click="goPublish" />
           <van-icon name="like-o" />
           <van-icon name="search" />
         </div>
@@ -14,25 +12,25 @@
       <section>
         <div 
           class="note-item" 
-          v-for="(item, index) in noteClassList" :key="index"
-          :style="`background-color: ${item.bgColor}`"
+          v-for="(item, index) in noteClassList" 
+          :key="index"
+          :style="`background-color:${item.bgColor}`"
           @click="goNoteList(item.title)"
         >
           <span class="title">{{item.title}}</span>
         </div>
+
       </section>
     </div>
-
-    <Menu class="menu" @hidden="hideMenu" :class="{'active': state.isMenuShow}"/>
   </div>
 </template>
 
 <script setup>
-import Menu from '../components/Menu.vue'
 import { reactive } from 'vue';
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
 
 const router = useRouter()
+
 const noteClassList = [
   { bgColor: '#f0aa84', title: '美食' },
   { bgColor: '#dcf189', title: '旅行' },
@@ -41,16 +39,10 @@ const noteClassList = [
   { bgColor: '#949c9d', title: '吵架' }
 ]
 
-const state = reactive({
-  isMenuShow: false
-})
-
-const hideMenu = (e) => {
-  state.isMenuShow = e
-}
 
 const goNoteList = (title) => {
-  router.push({ path: '/noteList', query: {'title': title} })
+  router.push({ path: '/noteList', query: {title: title} })
+  // router.push({ name: 'noteList', params: {title: title} })
 }
 
 const goPublish = () => {
@@ -88,6 +80,7 @@ const goPublish = () => {
 
       .van-icon {
         margin-left: 10px;
+        font-size: 20px;
       }
     }
 
@@ -127,4 +120,5 @@ const goPublish = () => {
     }
   }
 
-}</style>
+}
+</style>

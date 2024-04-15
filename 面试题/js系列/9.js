@@ -17,14 +17,14 @@
 
 
 Car.prototype = {
-    name: 'BMW',
-    height: 1400,
-    lang: 4900
-  }
-  function Car(color) {
-    
-    this.color = color
-  }
+  name: 'BMW',
+  height: 1400,
+  lang: 4900
+}
+function Car(color) {
   
-  let c = new Car('red')
-  let h = new Car('green')
+  this.color = color
+}
+
+let c = new Car('red')
+let h = new Car('green')

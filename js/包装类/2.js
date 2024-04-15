@@ -1,12 +1,16 @@
 let obj = {
-  name: '丁总',
+  name: '灵洋',
   age: 18
 }
-// console.log(obj['name']);
-// obj.girlFriend = '翠花'
-let girl = 'girlFriend'
-obj[girl] = '小红'
 
-delete obj[girl]
+// console.log(obj['name']);
+// obj.age = 19
+// obj.girlFriend = '小红'
+
+let n = 'girlFriend'
+obj[n] = '小红'
+
+delete obj[n]
+
 
 console.log(obj);

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h2>{{msg}}</h2>
+    <child1></child1>
+    <child2></child2>
+  </div>
+
+  <script>
+    Vue.component('child1', {
+      template: `<div @click="handle">{{${msg}}}</div>`,
+      data: {
+        msg: '组件1'
+      },
+      methods: {
+        handle() {
+          this.msg = '你好31254123'
+        }
+      }
+    })
+
+    Vue.component('child2', {
+      template: '<div>{{${msg}}}</div>',
+      data: {
+        msg: '组件2'
+      }
+    })
+
+
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          msg: 'hello world'
+        }
+      }
+    })
+  </script>
+
+  <script>
+    function Component() {
+
+    }
+    Component.prototype.data = function(){
+      return {
+        count: 0
+      }
+    }
+
+
+    const com1 = new Component()
+    const com2 = new Component()
+
+    com1.data().count = 1
+
+    console.log(com2.data().count);
+
+  </script>
+</body>
+</html>

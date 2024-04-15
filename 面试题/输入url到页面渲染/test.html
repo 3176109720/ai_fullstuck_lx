@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span{
+      color: red;
+    }
+    div > a > span{
+      color: green;
+    }
+  </style>
+  <script defer src="xxxx/axios.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <a href="#">
+      <span></span>
+    </a>
+  </div>
+</body>
+
+<script>
+  document.getElementById('app').onclick = function() {
+    axios.get('/index')
+  }
+</script>
+</html>
+
+
+<script>
+
+div.style.left = '10px'
+div.style.top = '10px'
+div.style.width = '10px'
+div.style.height = '10px'
+
+console.log(div.offsetHeight);
+console.log(div.offsetLeft);
+console.log(div.offsetTop);
+console.log(div.offsetWidth);
+
+
+
+
+
+
+
+
+
+let el = document.getElementById('app')
+el.style.width = (el.offsetWidth + 1) + 'px'
+el.style.width = 1 + 'px'
+
+</script>

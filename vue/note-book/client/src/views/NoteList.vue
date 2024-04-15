@@ -1,5 +1,7 @@
 <template>
   <div class="note-list">
+    <Back />
+
     <ul v-if="state.noteList.length">
       <li v-for="item in state.noteList" :key="item.id" @click="goNoteDetail(item.id)">
         <div class="img">
@@ -9,29 +11,30 @@
         <p class="title">{{item.title}}</p>
       </li>
     </ul>
-    <p class="empty" v-else>当前分类下还没有文章哦~~</p>
+    <p class="empty" v-else>当前分类下还没有文章哦~~ {{num}}</p>
   </div>
+
 </template>
 
 <script setup>
+import { useRoute, useRouter } from 'vue-router'
 import { onMounted, reactive } from 'vue';
-import { useRouter, useRoute } from 'vue-router'
-import axios from '../api'
-
-const router = useRouter()  // 路由实例
-const route = useRoute() // 当前路由详情
+import axios from '@/api'
+import Back from '@/components/Back.vue'
 
 const state = reactive({
   noteList: []
 })
+const route = useRoute()
+const router = useRouter()
 
 onMounted(async() => {
-  // 页面加载中发请求，拿到当前分类的数据
-  const { data } = await axios.post('/findNoteListByType', {
+  // 请求xxx分类的数据
+  const res = await axios.post('/findNoteListByType', {
     note_type: route.query.title
   })
-  state.noteList = data
-  console.log(data);
+  console.log(res);
+  state.noteList = res.data
 })
 
 const goNoteDetail = (id) => {
@@ -43,7 +46,7 @@ const goNoteDetail = (id) => {
 <style lang="less" scoped>
 .note-list{
   width: 100%;
-  padding: 1rem 0.667rem 0;
+  padding: 1.5rem 0.667rem 0;
   box-sizing: border-box;
   ul {
     display: grid;
@@ -73,3 +76,4 @@ const goNoteDetail = (id) => {
   }
 }
 </style>
+

@@ -1,9 +1,20 @@
-var b
+// var a   // 声明提升
+// console.log(a);
+// a = 1
 
-function foo(a) {
-  console.log(a + b);
-}
+// function foo() {
+//   console.log(123);
+// }
+// foo()
 
-foo(2)
 
-b = 1
+// let a = 1;
+// let a = 2
+
+
+const a = 1  // 常量
+a = 'hello'
+
+console.log(a);
+
+

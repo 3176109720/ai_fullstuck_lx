@@ -1,11 +1,17 @@
-let a = 1
-
-console.log(a);
-
 setTimeout(() => {
-  console.log(a);
+  console.log(1);
 }, 1000)
 
-for (let i = 0; i < 10000; i++) {  // 1s
+console.log(2);
+
+for (let i = 0; i < 100000; i++) {
 
 }
+
+
+
+setImmediate(() => {
+  // xxxxx
+})
+
+// xxxxx

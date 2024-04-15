@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="hello" onclick="handle()">
+    <div id="hello2" onclick="handle2()">hello2</div>
+  </div>
+  <!-- <div id="box">
+    <div id="box2">box2</div>
+  </div> -->
+
+  <div id="wrap">wrap</div>
+
+  <script>
+    // DOM0级
+    function handle() {
+      console.log('hello');
+    }
+    function handle2() {
+      console.log('hello2');
+    }
+
+    // // DOM1
+    // let box = document.getElementById('box')
+    // box.addEventListener('click', function() {
+    //   console.log('box', this);
+    // }, true);
+
+    // let box2 = document.getElementById('box2')
+    // box2.addEventListener('click', function() {
+    //   console.log('box2', this);
+    // });
+
+  </script>
+  <script>
+    let wrap = document.getElementById('wrap')
+    wrap.attachEvent('click', function() {
+      
+    })
+  </script>
+</body>
+</html>
