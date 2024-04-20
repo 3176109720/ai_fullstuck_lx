@@ -10,15 +10,19 @@ function App() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
   const [disabled, setDisabled] = useState(false);
+  const [progressItems, setProgressItems] = useState([]);
+  const [ready, setReady] = useState(false)
 
   const worker = useRef(null)
 
   const translate = () => {
     setDisabled(true)
+    // console.log(targetLanguage)
+    // return;
     worker.current.postMessage({
       text: input,
       src_lang: sourceLanguage,
-      tat_lang: targetLanguage
+      tgt_lang: targetLanguage
     })
   }
 
@@ -26,22 +30,56 @@ function App() {
     if (!worker.current) {
       worker.current = new Worker(new URL('./worker.js', import.meta.url), {
         type: 'module'
-      })
-
-      const onmessageReceived = (e) => {
-        console.log(e);
-      }
-      worker.current.addEventListener('message', onmessageReceived)
-
-      return () => worker.current.removeEventListener('message', onMessageReceived)
-      
+      });
     }
+    const onMessageReceived = (e) => {
+      // console.log(e);
+      switch (e.data.status) {
+        case 'initiate':
+          setReady(false);
+          setProgressItems(prev => [...prev, e.data]);
+          break;
+        case 'progress':
+          setProgressItems(
+            prev => prev.map(item => {
+              if (item.file === e.data.file) {
+                return {
+                  ...item,
+                  progress: e.data.progress
+                }
+              }
+              return item;
+            })
+          )
+          break
+        case 'done':
+          setProgressItems(
+            prev => prev.filter(item => item.file !== e.data.file)
+          )
+          break
+        case 'ready':
+          setReady(true)
+          break
+        case 'updata':
+          setOutput(e.data.output)
+          break
+        case 'complete':
+          setDisabled(false)
+          break
+      }
+    }
+
+    worker.current.addEventListener('message', onMessageReceived);
+
+
+    return () => worker.current.removeEventListener('message',
+      onMessageReceived)
   })
 
   return (
     <>
       <h1>Transformers.js</h1>
-      <h2>ML-powered multiligual translation in React!</h2>
+      <h2>ML-powered multiligual translation in React！</h2>
       <div className="container">
         <LanguageSelector
           type="Source"
@@ -60,6 +98,21 @@ function App() {
       </div>
       <button disabled={disabled} onClick={translate}>Translate</button>
       <Progress text="下载中" percentage={20} />
+
+      <div className="progress-bars-container">
+        {
+          ready == false && (
+            <label>Loading Models ...(only run once)</label>
+          )
+        }
+        {
+          progressItems.map(data => (
+            <div key={data.file}>
+              <Progress text={data.file} percentage={data.progress} />
+            </div>
+          ))
+        }
+      </div>
     </>
   )
 }
