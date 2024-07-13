@@ -1,0 +1,9 @@
+是什么： Async Javascript and XML ，是一种异步js和网页交互的技术，可以实现不刷新网页就跟服务器交换数据，更新页面
+
+实现过程
+
+创建XHR实例对象
+调用实例对象中的open方法与服务器建立连接
+调用实例对象中的send方法发送请求
+监听onreadystatechange事件，通过判断readyState的值来获取到最终的数据
+将数据更新到html页面

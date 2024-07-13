@@ -1,0 +1,37 @@
+一.了解过哪些ai大模型
+llm(大型语言模型)，tranformer，langchain(ai开发的框架)
+nlp（自然语言处理）
+使用过哪些ai应用
+chatgpt（3.5），文心一言(百度)   文心一格，通义千问。
+还用过通义灵码来辅助写代码
+ai可用于生活的方方面面，比如ai生成图片，ai绘画。
+文生文，文生图，文生视频(sora大模型)
+比如百度搜索引擎基本上都配置了ai用来解决客户问题。
+海马体公司将ai转化为盈利，消耗token。
+ai可帮助我们写代码，我们可能会进入低代码的时代。未来肯定是属于AIGC的。
+
+二.什么是AIGC？
+生成式人工智能——AIGC（Artificial Intelligence Generated Content），是指基于生成对抗网络、
+大型预训练模型等人工智能的技术方法，通过已有数据的学习和识别，
+以适当的泛化能力生成相关内容的技术。
+AIGC技术的核心思想是利用人工智能算法生成具有一定创意和质量的内容。
+通过训练模型和大量数据的学习，AIGC可以根据输入的条件或指导，
+生成与之相关的内容。例如，通过输入关键词、描述或样本，
+AIGC可以生成与之相匹配的文章、图像、音频等。
+
+
+三.实战
+google的colab云端
+它用于运行一些nlp任务非常方便，省去了本地安装一大堆环境，建议学习的时候先用它。colab
+temperature参数为自由度，值的范围在0-1之间
+
+引入了os 系统模块，输入有效的api key值。
+response = chat([ HumanMessage(content="Hello Langchain!") ])
+我们在聊天时，内容是由content和role组成的。role分为system、user、assistant三种。
+在langchain的schema里提供了user这种角色的消息对象，简化了我们聊天的代码。
+gpt-3.5-turbo
+
+2.langchain2  模型
+LangChain包含了chat_models聊天模型。LangChain还封装了大语言模型，封装大语言模型是核心功能
+，因为AI聊天的机器人主要是AI应用形式，为了方便，单独拎了聊天模型出来。
+LangChain支持的模型有OpenAI、ChatGLM、Llama、Hugging Face。其中，Hugging Face是目前最成功的大模型社区，我们可以方便的在这里挑选相应的大模型完成各种NLP任务。

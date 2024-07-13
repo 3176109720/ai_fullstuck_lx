@@ -1,0 +1,49 @@
+html的标签有哪些？
+div   p hr  iamge  h5新增语义化标签。
+hrader- 头标签
+footer - 尾标签
+nav - 导航
+section - 划分页面的不同区域
+article - 页面上一套结构完整且独立的内容部分
+aside - 和主题相关的附属信息
+
+css
+1.隐藏元素
+  
+2.行内和块级元素
+
+3.position定位有哪几种？
+
+1. 静态定位：static
+2. 相对定位：relative
+3. 绝对定位：absolute
+4. 固定定位：fixed
+5. 粘性定位：sticky
+
+4.display属性有几种？
+display: block;
+display: inline;
+display: inline-block;
+display: flex;
+display: inline-flex;
+display: grid;
+display: inline-grid;
+display: flow-root;
+display:none
+
+js 如何判断对象为空
+.keys()   .values()
+看键值对是否存在
+obj.hasOwnProperty()
+引用类型存在哪里？有什么缺点。
+函数的作用域的问题。
+数组循环有哪些方法
+防抖节流
+函数命名的方式（匿名函数）
+function   箭头  匿名  自执行函数。
+
+vue 
+watcher监听的原理。
+响应式的原理。
+v-model的原理。
+

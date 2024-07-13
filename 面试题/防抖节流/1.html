@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">提交</button>
+
+    <script>
+        let btn = document.getElementById('btn')
+
+        btn.addEventListener('click', throttle(handle, 1000))
+
+        function handle(e, a, b) {
+            console.log('提交了', this);
+        }
+
+
+        // function debounce(fn, wait) {
+        //     let timer = null
+        //     return function (...args) { // this === btn
+        //         // 销毁上一次的定时器
+        //         clearTimeout(timer)
+
+        //         timer = setTimeout(() => {
+        //             fn.call(this, ...args)
+        //         }, wait)
+        //     }
+
+        // }
+
+        // function throttle(fn, wait) { // 
+        //     let pre = Date.now()   // 1
+        //     return function (...args) {
+        //         let cur = Date.now()  // 3  // 3.1
+        //         if (cur - pre > wait) {
+        //             fn.call(this, ...args)
+        //             pre = cur
+        //         }
+
+        //     }
+        // }
+
+
+        // function debounce(fn, wait) {
+        //     let timer = null
+        //     return function (...args) {
+        //         clearTimeout(timer)
+        //         //销毁上一个定时器
+        //         timer = setTimeout(() => {
+        //             fn.call(this, ...args)
+        //         }, wait)
+        //     }
+        // }//这个就是防抖的手写了，我现在强大到可怕。
+
+        // function throttle(fn, wait) {
+        //     let pre = Date.now()
+        //     return function (...args) {
+        //         let cur = new Date.now()
+        //         if (cur - pre > wait) {
+        //             fn.call(this, ...args)
+        //             pre = cur
+        //         }
+        //     }
+        // }//这是一个简单的节流，并不是十分的适用于工作场景。
+
+
+        // function debounce(fn, await) {
+        //     let timer = null
+        //     return function (...args) {
+        //         clearTimeout(timer)
+        //         timer = setTimeout(() => {
+        //             fn.call(this, ...args)
+        //         }, await)
+        //     }
+        // }//这个就是防抖了，我现在强到可怕
+
+
+
+        // function throttle(fn,wait){
+        //     let pre=Date.now()
+        //     return function(...args){
+        //         let cur=new Date.now()
+        //         if(cur-pre>wait){
+        //             fn.call(this,...args)
+        //             pre=cur
+        //         }
+        //     }
+        // }//这就是节流。防抖节流都是为了去进行性能优化。
+    </script>
+</body>
+
+</html>

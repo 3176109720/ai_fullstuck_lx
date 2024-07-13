@@ -1,0 +1,55 @@
+云片一面
+
+一.自我介绍
+
+css 
+position属性有多少种？
+1. 静态定位：static
+2. 相对定位：relative
+3. 绝对定位：absolute
+4. 固定定位：fixed
+5. 粘性定位：sticky
+
+display属性有多少种？
+display: block;
+display: inline;
+display: inline-block;
+display: flex;
+display: inline-flex;
+display: grid;
+display: inline-grid;
+display: flow-root;
+
+box-sizing有什么属性(两种)
+用来设置盒模型
+box-sizing:boder-box
+box-sizing:content-box
+
+如何实现元素的垂直居中和水平居中
+1.定位
+2.display:felx
+3.display:grid
+
+flex身上还有其他的属性嘛？
+
+
+js
+数组身上有哪些方法？
+如何自定义一个函数挂载到数组上？
+
+vue 
+v-model双向绑定的原理
+如何在一个页面进行组件的通讯？
+通过发布订阅的方式
+
+aigc
+有用过什么ai来辅助你的开发
+coplit有没有用过
+你了解什么ai相关的知识？
+
+
+其他
+如果项目开发中遇到难题，你会怎么去解决（ai,查资料，看文档）
+你了解我们公司嘛？
+你为什么学习前端？
+你是怎么去学习前端的？
