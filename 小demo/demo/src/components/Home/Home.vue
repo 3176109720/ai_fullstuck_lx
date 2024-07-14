@@ -1,15 +1,17 @@
 <template>
-    <div>
-        我是主页
-    </div>
+    
+    <router-view></router-view>
+
 </template>
 
 <script lang="ts">
-    import { defineComponent } from 'vue'
+    import { getCurrentInstance } from 'vue';
+import { defineComponent } from 'vue'
 
     export default defineComponent({
-        name: 'HomePage'
+        name: 'HomePage',
     })
+
 </script>
 
 <style scoped>

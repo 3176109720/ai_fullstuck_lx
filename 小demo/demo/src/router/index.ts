@@ -15,7 +15,15 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
     name: 'HomePage',
-    component: ()=>import('../components/Home/Home.vue')
+    component: ()=>import('../components/Home/Home.vue'),
+    redirect: '/homeTop',
+    children:[
+      {
+        path: '/homeTop',
+        name: 'HomeTop',
+        component: ()=>import('../components/Home/components/top.vue')
+      },
+    ]
   },
 ]
 
