@@ -1,15 +1,18 @@
 <template>
-    
     <router-view></router-view>
-
+    <home-bottom></home-bottom>
 </template>
 
 <script lang="ts">
-    import { getCurrentInstance } from 'vue';
+
 import { defineComponent } from 'vue'
+import HomeBottom from './components/bottom.vue'
 
     export default defineComponent({
         name: 'HomePage',
+        components: {
+            HomeBottom,
+        },
     })
 
 </script>

@@ -19,9 +19,14 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/homeTop',
     children:[
       {
-        path: '/homeTop',
+        path: '/hometop',
         name: 'HomeTop',
         component: ()=>import('../components/Home/components/top.vue')
+      },
+      {
+        path: '/shopcart',
+        name: 'ShopCart',
+        component: ()=>import('../components/Shop/ShopCart.vue')
       },
     ]
   },

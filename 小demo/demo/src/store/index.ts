@@ -4,8 +4,6 @@ export default createStore({
   state: {
     cartArray:[]
   },
-  getters: {
-  },
   mutations: {
     // 添加商品到购物车
     toCart(state: any,tag: any){
@@ -34,6 +32,14 @@ export default createStore({
   actions: {
   },
   modules: {
-  }
-  
+  },
+  getters:{
+    getGoodsNum(store: any){
+      let num = 0
+      store.cartArray.forEach((val: any)=>{
+        num += val.cartCount
+      })
+      return num      
+    }
+  },
 })
